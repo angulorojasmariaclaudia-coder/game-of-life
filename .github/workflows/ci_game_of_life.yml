@@ -2,13 +2,12 @@ name: Game of life testing
 
 on: push
 
-strategy:
-  matrix:
-    java: [ '17',  '21']
-
 jobs:
   game-of-life-test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: [ '17',  '21']
     steps:
       - uses: stCarolas/setup-maven@v5
         with:
